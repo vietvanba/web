@@ -1,5 +1,6 @@
 package com.htth.web.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -19,11 +20,12 @@ public class Item {
     private Integer id;
     private String name;
     private Integer icon;
+    @Column(name = "indexInfoPotion")
     private Integer indexInfoPotion;
     private Integer price;
     private Integer priceruby;
-    private Integer istrade;
-    private Integer hpmpother;
+    private Short istrade;
+    private Short hpmpother;
     private Integer timedelay;
     private Integer value;
     private Integer timeactive;

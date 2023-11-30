@@ -19,7 +19,7 @@ public class MaterialItem {
     private Integer id;
     private String name;
     private Integer icon;
-    private Integer type;
+    private Short type;
     private Integer price;
     private Integer priceruby;
     private Integer istrade;

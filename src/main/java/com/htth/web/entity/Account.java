@@ -1,9 +1,6 @@
 package com.htth.web.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,38 +12,53 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Accounts {
+public class Account {
     @Id
-    @Column(name="id")
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name="user")
 
+    @Column(name = "user")
     private String user;
-    @Column(name="pass")
 
+    @Column(name = "pass")
     private String pass;
-    @Column(name = "char")
+    @Column(name = "`char`")
     private String character;
-    @Column(name="onl")
 
-    private Integer onl;
-    @Column(name="phone")
+    @Column(name = "onl")
+    private Short onl;
 
+    @Column(name = "phone")
     private String phone;
-    @Column(name="coin")
 
+    @Column(name = "coin")
     private Integer coin;
-    @Column(name="kichhoat")
 
+    @Column(name = "kichhoat")
     private Integer kichhoat;
-    @Column(name="lock")
 
-    private Integer lock;
-    @Column(name="naptuan")
+    @Column(name = "lock_status")
+    private Integer lock_status;
 
-    private Integer naptuan;
-    @Column(name="tongnap")
+    @Column(name = "naptuan")
+    private Long naptuan;
 
-    private Integer tongnap;
+    @Column(name = "tongnap")
+    private Long tongnap;
 
+    public Account(String user, String pass, String character, short onl, String phone, int coin, int kichhoat, int lock_status, Long naptuan, long tongnap) {
+        this.user = user;
+        this.pass = pass;
+        this.character = character;
+        this.onl = onl;
+        this.phone = phone;
+        this.coin = coin;
+        this.kichhoat = kichhoat;
+        this.lock_status = lock_status;
+        this.naptuan = naptuan;
+        this.tongnap = tongnap;
+    }
 }
+
+

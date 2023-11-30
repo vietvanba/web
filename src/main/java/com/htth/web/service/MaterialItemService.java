@@ -1,8 +1,7 @@
 package com.htth.web.service;
 
-import com.example.htth.entity.MaterialItem;
-import com.example.htth.mapper.ItemMapper;
-import com.example.htth.repository.MaterialItemRepository;
+import com.htth.web.mapper.ItemMapper;
+import com.htth.web.repository.MaterialItemRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ public class MaterialItemService {
     private MaterialItemRepository repository;
     @Autowired
     private ModelMapper mapper;
-    public List<ItemMapper> IgetAll() {
+    public List<ItemMapper> getAll() {
         try {
             List<ItemMapper> result = repository.findAll().stream().map(x-> mapper.map(x, ItemMapper.class)).toList();
             return result;

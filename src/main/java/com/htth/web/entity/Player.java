@@ -20,11 +20,11 @@ public class Player {
     private String date;
     private String quest_daily;
     private Integer level;
-    private Integer exp;
+    private Long exp;
     private String site;
-    private Integer clazz;
-    private Integer vang;
-    private Integer ngoc;
+    private Short clazz;
+    private Long vang;
+    private Long ngoc;
     private String bag3;
     private String box3;
     private String it_body;

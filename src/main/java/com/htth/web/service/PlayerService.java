@@ -1,7 +1,7 @@
 package com.htth.web.service;
 
-import com.example.htth.entity.Player;
-import com.example.htth.repository.PlayerRepository;
+import com.htth.web.entity.Player;
+import com.htth.web.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ public class PlayerService {
     @Autowired
     private PlayerRepository repository;
 
-    public Integer getGoldBalances(String username) {
+    public Long getGoldBalances(String username) {
         try {
             return repository.findByName(username).orElseThrow(() -> new RuntimeException("Please insert a correct username")).getVang();
         } catch (Exception e) {
@@ -18,7 +18,7 @@ public class PlayerService {
         }
     }
 
-    public Integer getRubyBalances(String username) {
+    public Long getRubyBalances(String username) {
         try {
             return repository.findByName(username).orElseThrow(() -> new RuntimeException("Please insert a correct username")).getNgoc();
         } catch (Exception e) {
@@ -48,8 +48,8 @@ public class PlayerService {
     }
     public Player resetGoldsAndRubies(String username) {
         Player player = repository.findByName(username).orElseThrow(() -> new RuntimeException("Please insert a correct username"));
-        player.setVang(0);
-        player.setNgoc(0);
+        player.setVang(0L);
+        player.setNgoc(0L);
         return repository.save(player);
     }
 }

@@ -1,5 +1,6 @@
 package com.htth.web.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -18,19 +19,20 @@ public class Equipment {
     @Id
     private Integer id;
     private String name;
-    private Integer clazz;
+    private Short clazz;
     private Integer typeequip;
     private Integer icon;
     private Integer level;
-    private Integer color;
-    private Integer typelock;
-    private Integer numHoleDaDuc;
+    private Short color;
+    private Short typelock;
+    @Column(name="numHoleDaDuc")
+    private Short numHoleDaDuc;
     private Integer chetac;
-    private Integer ishoanmy;
-    private Integer valuekichan;
+    private Short ishoanmy;
+    private Short valuekichan;
     private String op_1;
     private String op_2;
-    private Integer numlokham;
+    private Short numlokham;
     private String mdakham;
     private Integer part;
     private Integer beri;
