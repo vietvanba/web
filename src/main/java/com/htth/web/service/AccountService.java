@@ -36,7 +36,7 @@ public class AccountService {
                         (short) 0,
                         request.getPhone(),
                         0,
-                        0,
+                        1,
                         0,
                         0L,
                         0L
